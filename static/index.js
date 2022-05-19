@@ -59,7 +59,7 @@ const evaluate = value => {
     if (!Array.isArray(array)) {
       return new Error("Must be an array!");
     }
-    return array.map(evaluate);
+    return array.map(evaluate)
   };
 
 // DOM queries
@@ -108,12 +108,13 @@ prime.form.addEventListener("submit", e => {
     prime.error.innerHTML = "";
 })
 
+//doesnt work when element in the array is non-number (eg. "string")
 fizz.form.addEventListener("submit", e =>{
   e.preventDefault();
-  const inputValue = +fizz.input.value;
-  const numberCheck = Number.isFinite(inputValue) ? inputValue : fizz.input.value;
-  const [output] = fizzBuzz([numberCheck]);
-  fizz.output.innerHTML = `<p>${output}</p>`
+  const stringToArray = fizz.input.value.split(',')
+  const newArray = stringToArray.map(item => +item);
+  const output = fizzBuzz(newArray);
+  fizz.output.innerHTML = `<p>${output.join("<br>")}</p>`
   fizz.input.value = ""
 })
 

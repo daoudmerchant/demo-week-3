@@ -99,6 +99,7 @@ prime.form.addEventListener("submit", e => {
     if (factors instanceof Error) {
         prime.error.innerHTML = `<p>${factors.toString()}</p>`;
         prime.output.innerHTML = "";
+        prime.input.value = "";
         return;
     }
     const sentence = `The prime factors are ${phraseFactors(factors)}`;
@@ -106,3 +107,15 @@ prime.form.addEventListener("submit", e => {
     prime.input.value = "";
     prime.error.innerHTML = "";
 })
+
+//i know its shit but ...
+
+fizz.form.addEventListener("submit", e =>{
+  e.preventDefault();
+  const inputValue = +fizz.input.value;
+  const numberCheck = Number.isFinite(inputValue) ? inputValue : fizz.input.value;
+  const [output] = fizzBuzz([numberCheck]);
+  fizz.output.innerHTML = `<p>${output}</p>`
+  fizz.input.value = ""
+})
+

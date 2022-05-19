@@ -108,8 +108,6 @@ prime.form.addEventListener("submit", e => {
     prime.error.innerHTML = "";
 })
 
-//i know its shit but ...
-
 fizz.form.addEventListener("submit", e =>{
   e.preventDefault();
   const inputValue = +fizz.input.value;

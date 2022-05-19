@@ -1,10 +1,18 @@
 html {
-    display: block;
-    width: 100%;
+    display: 1080px;
+    max-width: 100%;
+    min-width: 1080px;
 }
 body {
     display: grid;
     grid-template-columns: 200px 1fr;
+    width: 90%;
+    max-width: 100%;
+    min-width: 1080px;
+    margin: auto;
+    position: relative;
+  
+}
 
 }
 
@@ -38,6 +46,7 @@ h1 {
     font-size: 25px;
     letter-spacing: 3px;
     text-align: left;
+    color: #104861;
 }
 h1.logo {
     font-family: 'Abel',Helvetica,Arial,Lucida,sans-serif;
@@ -45,12 +54,12 @@ h1.logo {
     font-size: 30px;
     letter-spacing: 1px;
     text-align: left;
-    color: #104861;;
+    color: #104861;
 }
 
 p {
     font-family: 'Abel',Helvetica,Arial,Lucida,sans-serif;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 14px;
     letter-spacing: 1px;
     text-align: left;
@@ -71,3 +80,54 @@ nav {
     margin-left: 10px;
     margin-top: 0px;
 }
+label {
+    font-family: 'Abel',Helvetica,Arial,Lucida,sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+input {
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: left;
+        writing-mode: horizontal-tb !important;
+        font-style: ;
+        font-variant-ligatures: ;
+        font-variant-caps: ;
+        font-variant-numeric: ;
+        font-variant-east-asian: ;
+        font-weight: ;
+        font-stretch: ;
+        font-size: ;
+        text-rendering: auto;
+        color: -internal-light-dark(black, white);
+        word-spacing: normal;
+        line-height: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        appearance: auto;
+        -webkit-rtl-ordering: logical;
+        cursor: text;
+        background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+        margin: 0em;
+        padding: 1px 2px;
+        border-width: 2px;
+        border-style: inset;
+        border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+        border-image: initial;
+    }
+
+input[type="text" i] {
+        padding: 1px 2px;
+        font-family: 'Abel',Helvetica,Arial,Lucida,sans-serif;
+        font-weight: normal;
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-align: left;
+        color: #104861;
+    }

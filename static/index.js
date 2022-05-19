@@ -13,15 +13,10 @@ const errors = [{
     msg: "Number cannot be negative"
 }]
 
-const checkForErrors = num => {
-    errors.forEach(({check, msg}) => {
-        if (check(num)) throw new Error(msg)
-    })
-}
-
 const primeFactor = (num) => {
-    checkForErrors(num)
-
+    for (let {check, msg} of errors) {
+        if (check(num)) return new Error(msg)
+    }
     if (num === 1) return [];
 
     let factors = [];
@@ -62,7 +57,7 @@ const evaluate = value => {
   
   const fizzBuzz = array => {
     if (!Array.isArray(array)) {
-      return false;
+      return new Error("Must be an array!");
     }
     return array.map(evaluate);
   };
@@ -74,13 +69,12 @@ const getDomElements = id => ({
     section: document.querySelector(`#${id}`),
     form: document.querySelector(`#${id} form`),
     input: document.querySelector(`#${id} input`),
-    error: document.querySelector(`#${id} error`),
+    error: document.querySelector(`#${id} .error`),
     output: document.querySelector(`#${id} .output`)
 })
 
 const fizz = getDomElements("fizzbuzz");
 const prime = getDomElements("primefactors")
-
 
 fizz.button.addEventListener("click", () => {
     prime.section.classList.add("hidden");
@@ -98,9 +92,17 @@ const phraseFactors = arr => {
 
 prime.form.addEventListener("submit", e => {
     e.preventDefault();
+    prime.error.innerHTML = ""
     const numberInput = +prime.input.value;
     const param = Number.isFinite(numberInput) ? numberInput : prime.input.value;
     const factors = primeFactor(param)
+    if (factors instanceof Error) {
+        prime.error.innerHTML = `<p>${factors.toString()}</p>`;
+        prime.output.innerHTML = "";
+        return;
+    }
     const sentence = `The prime factors are ${phraseFactors(factors)}`;
     prime.output.innerHTML = `<p>${sentence}</p>`
+    prime.input.value = "";
+    prime.error.innerHTML = "";
 })

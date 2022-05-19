@@ -1,19 +1,23 @@
-html {
-    display: 1080px;
+/* html {
+    display: 1080px; - display doesn't take px... 
     max-width: 100%;
     min-width: 1080px;
 }
+
+html, body {
+    margin: 0;
+    height: 100%;
+    max-height: 100vh
+}
+
 body {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    width: 90%;
+    grid-template-columns: 400px 1fr;
+    /* width: 90%;
     max-width: 100%;
     min-width: 1080px;
     margin: auto;
     position: relative;
-  
-}
-
 }
 
 ul {
@@ -65,21 +69,13 @@ p {
     text-align: left;
 }
 
-.hidden {
-    display: none;
-}
-
 main {
     display: block;
     margin-left: 50px;
     margin-top: 60px;
 }
 
-nav {
-    display: block;
-    margin-left: 10px;
-    margin-top: 0px;
-}
+
 label {
     font-family: 'Abel',Helvetica,Arial,Lucida,sans-serif;
     font-weight: normal;
@@ -130,4 +126,110 @@ input[type="text" i] {
         letter-spacing: 1px;
         text-align: left;
         color: #104861;
-    }
+    } */
+
+/* Proposed by Daoud */
+
+html, body {
+    margin: 0;
+    height: 100%;
+    max-height: 100vh
+}
+
+body {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    width: 100%;
+    max-width: 100%;
+    min-width: 1080px;
+    margin: auto;
+    position: relative;
+}
+
+nav {
+    display: block;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+section {
+    transition: ease-in 0.3s all;
+    opacity: 100%;
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 2fr 10fr;
+    background-color:azure;
+    padding: 20px;
+    height: 100%
+}
+
+section > div {
+    display: grid;
+    grid-template-rows: 8fr 2fr;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    margin: none;
+}
+
+button {
+    width: 100%;
+    margin: 0;
+}
+
+nav button {
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
+form > * {
+    margin: 20px;
+}
+
+label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.output {
+    height: 100%;
+    display: flex;
+    width: 100%
+}
+
+#fizzbuzz .output {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow-y: scroll;
+}
+
+#fizzbuzz .output p {
+    display: block;
+    width: 150px;
+}
+
+#primefactors .output {
+    justify-content: center;
+    align-items: center;
+}
+
+.fadeout {
+    opacity: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --end-- */

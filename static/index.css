@@ -1,234 +1,3 @@
-/* html {
-    display: 1080px; - display doesn't take px... 
-    max-width: 100%;
-    min-width: 1080px;
-}
-
-html, body {
-    margin: 0;
-    height: 100%;
-    max-height: 100vh
-}
-
-body {
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    /* width: 90%;
-    max-width: 100%;
-    min-width: 1080px;
-    margin: auto;
-    position: relative;
-}
-
-ul {
-    display: flex;
-    font-family: 'Abel',Helvetica,Arial,Lucida,sans-serif;
-}
-
-li {
-    list-style-type: none;
-    font-family: 'Abel',Helvetica,Arial,Lucida,sans-serif;
-}
-
-button {
-    font-size: 14px;
-    background-color: #104861;
-    border-width: 1px!important;
-    border-color: #104861;
-    border-radius: 1px;
-    font-weight: normal;
-    font-style: normal;
-    text-transform: none;
-    text-decoration: none;
-    letter-spacing: 2px;
-    color: #f2f2f2;
-    margin-top: 5px;
-}
-h1 {
-    font-family: 'Abel',Helvetica,Arial,Lucida,sans-serif;
-    font-weight: 500;
-    font-size: 25px;
-    letter-spacing: 3px;
-    text-align: left;
-    color: #104861;
-}
-h1.logo {
-    font-family: 'Abel',Helvetica,Arial,Lucida,sans-serif;
-    font-weight: 900;
-    font-size: 30px;
-    letter-spacing: 1px;
-    text-align: left;
-    color: #104861;
-}
-
-p {
-    font-family: 'Abel',Helvetica,Arial,Lucida,sans-serif;
-    font-weight: normal;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-align: left;
-}
-
-main {
-    display: block;
-    margin-left: 50px;
-    margin-top: 60px;
-}
-
-
-label {
-    font-family: 'Abel',Helvetica,Arial,Lucida,sans-serif;
-    font-weight: normal;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-align: left;
-}
-input {
-    font-weight: normal;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-align: left;
-        writing-mode: horizontal-tb !important;
-        font-style: ;
-        font-variant-ligatures: ;
-        font-variant-caps: ;
-        font-variant-numeric: ;
-        font-variant-east-asian: ;
-        font-weight: ;
-        font-stretch: ;
-        font-size: ;
-        text-rendering: auto;
-        color: -internal-light-dark(black, white);
-        word-spacing: normal;
-        line-height: normal;
-        text-transform: none;
-        text-indent: 0px;
-        text-shadow: none;
-        display: inline-block;
-        text-align: start;
-        appearance: auto;
-        -webkit-rtl-ordering: logical;
-        cursor: text;
-        background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
-        margin: 0em;
-        padding: 1px 2px;
-        border-width: 2px;
-        border-style: inset;
-        border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-        border-image: initial;
-    }
-
-input[type="text" i] {
-        padding: 1px 2px;
-        font-family: 'Abel',Helvetica,Arial,Lucida,sans-serif;
-        font-weight: normal;
-        font-size: 14px;
-        letter-spacing: 1px;
-        text-align: left;
-        color: #104861;
-    } */
-
-/* Proposed by Daoud */
-/* 
-html, body {
-    margin: 0;
-    height: 100%;
-    max-height: 100vh
-}
-
-body {
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    width: 100%;
-    max-width: 100%;
-    min-width: 1080px;
-    margin: auto;
-    position: relative;
-}
-
-nav {
-    display: block;
-    margin-left: 10px;
-    margin-top: 0px;
-}
-
-section {
-
-    position: relative;
-    display: grid;
-    grid-template-rows: 1fr 2fr 10fr;
-    background-color:azure;
-    padding: 20px;
-    height: 100%
-}
-
-section > div {
-    display: grid;
-    grid-template-rows: 8fr 2fr;
-}
-
-nav {
-    display: flex;
-    flex-direction: column;
-    margin: none;
-}
-
-button {
-    width: 100%;
-    margin: 0;
-}
-
-nav button {
-    height: 100px;
-    margin-bottom: 20px;
-}
-
-form {
-    display: grid;
-    width: 100%;
-    height: 100%;
-    grid-template-columns: 1fr 1fr 2fr;
-}
-
-form > * {
-    margin: 20px;
-}
-
-label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.output {
-    height: 100%;
-    display: flex;
-    width: 100%
-}
-
-#fizzbuzz .output {
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    overflow-y: scroll;
-}
-
-#fizzbuzz .output p {
-    display: block;
-    width: 150px;
-}
-
-#primefactors .output {
-    justify-content: center;
-    align-items: center;
-}
-
-.hidden {
-    display: none;
-} */
-
-/* --end-- */
-
 * {
     margin: 0;
     padding: 0;
@@ -254,10 +23,10 @@ nav {
     text-align: left;
     color: #425867;
 }
-ul.menu {
+ul {
     margin-top: 15px;
 }
-ul.menu button {
+ul button {
     font-family: 'Abel',Helvetica,Arial,Lucida,sans-serif;
     font-weight: 500;
     font-size: 22px;
@@ -269,6 +38,7 @@ ul.menu button {
     border-color: #fff;
     border-bottom-color: #425867;
     width: 60%;
+    transition: background-color .3s ease-in
 }
 
 body {
@@ -290,7 +60,6 @@ body {
 }
 button {
     font-size: 18px;
-    background-color: #425867;
     border-width: 1px!important;
     border-color: #425867;
     border: 5px solid;
@@ -302,6 +71,10 @@ button {
     display: inline-flex;
     padding: 1rem 2rem;
     align-items: center;
+}
+
+form button {
+    background-color: #425867;
 }
 
 h1 {
@@ -388,6 +161,10 @@ input[type="text" i] {
 
 .fadeout {
     opacity: 0;
+}
+
+.selected {
+    background-color: #b0dbf7;;
 }
 
 .error {

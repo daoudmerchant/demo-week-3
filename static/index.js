@@ -16,7 +16,6 @@ const errors = [
 ];
 
 const primeFactor = (num) => {
-  console.log("calling")
   for (let { check, msg } of errors) {
     if (check(num)) return new Error(msg);
   }
@@ -81,7 +80,9 @@ const prime = getDomElements("primefactors");
 
 const addViewToggle = (proj1, proj2) => {
   const addListeners = (a, b) => {
-    a.button.addEventListener("click", () => {
+    a.button.addEventListener("click", (e) => {
+      e.target.classList.add("selected");
+      b.button.classList.remove("selected");
       b.section.classList.add("fadeout");
       setTimeout(() => {
         b.section.classList.add("hidden");
@@ -156,13 +157,3 @@ const formatFizzBuzz = (fizzBuzzArray) =>
   fizzBuzzArray.map((string) => `<p>${string}</p>`).join("");
 
 addFormFunctionality(fizz, callFizzBuzzWithArray, formatFizzBuzz);
-
-// //doesnt work when element in the array is non-number (eg. "string")
-// fizz.form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   const stringToArray = fizz.input.value.split(",");
-//   const newArray = stringToArray.map((item) => +item);
-//   const output = fizzBuzz(newArray);
-//   fizz.output.innerHTML = `<p>${output.join("<br>")}</p>`;
-//   fizz.input.value = "";
-// });

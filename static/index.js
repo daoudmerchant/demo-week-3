@@ -16,6 +16,7 @@ const errors = [
 ];
 
 const primeFactor = (num) => {
+  console.log("calling")
   for (let { check, msg } of errors) {
     if (check(num)) return new Error(msg);
   }
@@ -101,12 +102,10 @@ const addFormFunctionality = (proj, callFunc, getText) => {
   proj.form.addEventListener("submit", (e) => {
     e.preventDefault();
     proj.error.innerHTML = "";
-    const input = +proj.input.value;
-    const value = Number.isFinite(input) ? input : proj.input.value;
-    const result = callFunc(value);
+    const result = callFunc(proj.input.value);
     if (result instanceof Error) {
       proj.output.innerHTML = "";
-      proj.error.innerHTML = `<p>${result.toString()}</p>`;
+      proj.error.textContent = result.toString();
       return;
     }
     const text = getText(result);
@@ -121,13 +120,36 @@ const formatPrimeFactors = (factorArr) => {
     .replace(/, (?!.*, )/, " and ")}.`;
 };
 
-addFormFunctionality(prime, primeFactor, formatPrimeFactors);
+const callPrimeFactor = input => {
+  if (Number.isFinite(+input)) {
+    return primeFactor(+input)
+  }
+  return primeFactor(input)
+}
+
+addFormFunctionality(prime, callPrimeFactor, formatPrimeFactors);
+
+const coerceToValue = val => {
+  if (val === "undefined") return undefined;
+  if (val === "null") return null;
+  if (val.charAt(0) === "[") return [];
+  if (val.charAt(0) === "{") return {};
+  if (Number.isFinite(+val)) return +val;
+  return val;
+}
 
 const callFizzBuzzWithArray = (input) => {
-  console.log("Calling");
-  if (typeof input !== "number") return fizzBuzz(input);
-  const numArray = new Array(input).fill().map((a, i) => i + 1);
-  return fizzBuzz(numArray);
+  const values = input.split(",");
+  if (values.length === 1) {
+    const [value] = values;
+    const formattedVal = coerceToValue(value);
+    return fizzBuzz(formattedVal);
+  }
+  const formattedValues =  values.map(val => {
+    const trimmed = val.trim();
+    return coerceToValue(trimmed);
+  })
+  return fizzBuzz(formattedValues);
 };
 
 const formatFizzBuzz = (fizzBuzzArray) =>

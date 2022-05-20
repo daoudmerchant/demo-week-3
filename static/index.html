@@ -8,17 +8,24 @@
     <title>Promise.all() Week 3</title>
 </head>
 <body>
-    <nav>
-        <h1 class="logo">Promise.All</h1>
-        <button class="fizzbuzz">FizzBuzz</button>
-        <button class="primefactors">Prime Factors</button>
-    </nav>
-    <main>
+    <section class="content">
+        <nav>
+            <div class="container">
+                    <div class="logo">
+                        <h1>Promise.All</h1>
+                    </div>
+                    <ul class="menu">
+                        <button class="fizzbuzz">FizzBuzz</button>
+                        <button class="primefactors">Prime Factors</button>
+                    </ul>
+            </div>
+        </nav>
+        <main>
         <section id="fizzbuzz">
             <h1>Fizz Buzz</h1>
             <div>
                 <form>
-                    <label for="fizz">Enter a number from 1 to 100:
+                    <label for="fizz">Please enter comma-separated values:
                     </label>
                     <input type="text" id="fizz">
                     <button type="submit">Submit</button>
@@ -42,6 +49,9 @@
             </div>
         </section>
     </main>
+</section>
+
+
     <script src="index.js"></script>
 </body>
 </html>
